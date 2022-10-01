@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Exercicios
 {
@@ -68,6 +69,48 @@ namespace Exercicios
                     break;
                 case 3:
                     //fazer moda
+                    int mode;
+
+                    //List<int> inputNumberList = new List<int>(inputNumbers);
+                    HashSet<int> inputs = new HashSet<int>(inputNumbers); 
+
+                  
+
+                    //Imprimir lista 
+                    foreach (int i in inputs)
+                    {
+                        Console.WriteLine(i);
+                    }
+
+                    /*int[,] tempArray = new int[inputNumbers.Length, 2];
+
+                    for (int i = 0; i < inputNumbers.Length; i++)
+
+                    {
+                        int count = 0;
+
+                        for (int u = 0; u < inputNumbers.Length; u++)
+                        {
+                            if (inputNumbers[i] == inputNumbers[u])
+                            {
+                                count++;
+                            }
+                        }
+
+                        tempArray[i, 0] = inputNumbers[i];
+                        tempArray[i, 1] = inputNumbers[i];
+
+                    }
+
+                    //tempArray.GroupBy(value => value);
+
+                    //tempArray.OrderByDescending(value => value);
+                    foreach (int i in tempArray)
+                    {
+
+                        Console.WriteLine(tempArray.ToString());
+
+                    } */
                     break;
                 case 4:
                     //Max Value
