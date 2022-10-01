@@ -69,48 +69,39 @@ namespace Exercicios
                     break;
                 case 3:
                     //fazer moda
-                    int mode;
+                    Dictionary<int, int> repeatedNrs = new Dictionary<int, int>();
 
-                    //List<int> inputNumberList = new List<int>(inputNumbers);
-                    HashSet<int> inputs = new HashSet<int>(inputNumbers); 
-
-                  
-
-                    //Imprimir lista 
-                    foreach (int i in inputs)
-                    {
-                        Console.WriteLine(i);
-                    }
-
-                    /*int[,] tempArray = new int[inputNumbers.Length, 2];
+                    //Lista de numeros ja usados
+                    List<int> trash = new List<int>();
 
                     for (int i = 0; i < inputNumbers.Length; i++)
-
                     {
                         int count = 0;
 
                         for (int u = 0; u < inputNumbers.Length; u++)
                         {
-                            if (inputNumbers[i] == inputNumbers[u])
+                            if (!trash.Contains(inputNumbers[i]))
                             {
-                                count++;
+                                if (inputNumbers[i] == inputNumbers[u])
+                                {
+                                    count++;
+                                }
+                            }
+                            else
+                            {
+                                break;
                             }
                         }
 
-                        tempArray[i, 0] = inputNumbers[i];
-                        tempArray[i, 1] = inputNumbers[i];
-
+                        if (!trash.Contains(inputNumbers[i]))
+                        {
+                            repeatedNrs.Add(inputNumbers[i], count);
+                        }
+                        trash.Add(inputNumbers[i]);
                     }
 
-                    //tempArray.GroupBy(value => value);
-
-                    //tempArray.OrderByDescending(value => value);
-                    foreach (int i in tempArray)
-                    {
-
-                        Console.WriteLine(tempArray.ToString());
-
-                    } */
+                    repeatedNrs.OrderByDescending(value => value.Value);
+                    Console.WriteLine("Mode is: " + repeatedNrs.Values.FirstOrDefault());
                     break;
                 case 4:
                     //Max Value
@@ -125,9 +116,6 @@ namespace Exercicios
                     break;
 
             }
-
-
-
 
         }
     }
